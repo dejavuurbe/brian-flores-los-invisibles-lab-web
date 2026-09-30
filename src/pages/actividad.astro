@@ -10,11 +10,11 @@ const emailPending = site.emailState === 'pending';
   <section class="section">
     <div class="container">
       <p class="eyebrow">Actividad</p>
-      <h1>Presentaciones y recorrido público</h1>
-      <p class="lead">Actividades, entrevistas, notas y apariciones verificables vinculadas con el autor y su obra.</p>
+      <h1>La escritura<br/>en conversación.</h1>
+      <p class="lead">Entrevistas, lecturas y relatos: otras formas de entrar en el universo de Brian Flores.</p>
       {site.activity.length > 0
         ? <div class="press-grid">{site.activity.map((item) => (
-            <article class="card"><p class="eyebrow">{item.source}</p><h2>{item.title}</h2><p>{item.description}</p>{item.url && /^https?:\/\//.test(item.url) && <a href={item.url} target="_blank" rel="noopener">Ver fuente</a>}</article>
+            <article class="card"><p class="eyebrow">{item.type}</p><p class="activity-source">{item.source}</p><h2>{item.title}</h2><p>{item.description}</p>{item.url && /^https?:\/\//.test(item.url) && <a href={item.url} target="_blank" rel="noopener">Leer o ver la publicación ↗</a>}</article>
           ))}</div>
         : site.activityState === 'pending'
           ? <article class="card pending-card"><p class="eyebrow">Pendiente</p><h2>Actividad para confirmar</h2><p>Aún no hay hitos verificados y aprobados para mostrar.</p></article>
@@ -24,8 +24,8 @@ const emailPending = site.emailState === 'pending';
 
   <section class="section contact-section" id="contacto">
     <div class="container">
-      <p class="eyebrow">Contacto</p><h2>Canales públicos</h2>
-      <p class="lead">Redes y medios oficiales para lectores, prensa, entrevistas, presentaciones y consultas.</p>
+      <p class="eyebrow">Contacto</p><h2>Sigamos la conversación.</h2>
+      <p class="lead">Para lectores, entrevistas, presentaciones y conversaciones sobre literatura.</p>
       <div class="contact-links">
         {socials.map((item) => {
           const active = item.state === 'confirmed' && Boolean(item.url) && /^https?:\/\//.test(item.url!);
@@ -43,12 +43,12 @@ const emailPending = site.emailState === 'pending';
 <style>
   h1{max-width:15ch}
   .press-grid{display:grid;gap:1rem;margin-top:3rem}
-  .press-grid h2{font-size:2rem}
+  .press-grid h2{font-size:1.8rem}.activity-source{font-size:.78rem;color:var(--color-muted)}.card{display:flex;flex-direction:column}.card>a{margin-top:auto;padding-top:1rem;color:var(--color-accent);font-size:.85rem}.card>p{color:var(--color-muted)}h1{font-size:clamp(3rem,6vw,5rem)}
   .pending-card{border-style:dashed}
   .contact-section{background:var(--color-surface);border-top:1px solid var(--color-border)}
   .contact-links{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
   .social-link{display:inline-flex;align-items:center;gap:.55rem;min-height:46px;padding:.65rem 1rem;border:1px solid var(--color-border);border-radius:999px;text-decoration:none}
   .social-link.pending{border-style:dashed;color:var(--color-muted);cursor:default}
   .social-link small{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em}
-  @media(min-width:760px){.press-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:760px){.press-grid{grid-template-columns:repeat(3,1fr)}}
 </style>

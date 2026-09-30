@@ -11,7 +11,7 @@ const {
   title,
   description,
   canonical = Astro.url.href,
-  image = '/images/social-placeholder.svg',
+  image = '/images/los-invisibles.png',
   schema,
 } = Astro.props;
 
@@ -41,7 +41,7 @@ const keepOutOfSearch = site.lifecycle.delivery !== 'TERMINADA';
 <meta name="twitter:image" content={absoluteImage} />
 
 <link rel="manifest" href={manifestUrl} />
-<meta name="theme-color" content="#f5f2ec" />
+<meta name="theme-color" content="#101913" />
 
 {schema && (
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />

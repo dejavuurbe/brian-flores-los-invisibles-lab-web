@@ -1,9 +1,1 @@
-{
-  "name": "Nombre del autor",
-  "short_name": "Autor",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#f5f2ec",
-  "theme_color": "#f5f2ec",
-  "icons": []
-}
+{"name":"Brian Flores · Los Invisibles","short_name":"Brian Flores","start_url":"./","display":"standalone","background_color":"#101913","theme_color":"#101913","icons":[]}
